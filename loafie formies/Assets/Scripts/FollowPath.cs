@@ -20,7 +20,6 @@ public class FollowPath : MonoBehaviour
         if (currentPoint < path.transform.childCount)
         {
             GameObject point = path.transform.GetChild(currentPoint).gameObject;
-            transform.position = Vector3.MoveTowards(transform.position, point.transform.position, speed);
             if (point.transform.childCount > 0)
             {
                 GameObject newObject = Instantiate(gameObject);
@@ -28,10 +27,16 @@ public class FollowPath : MonoBehaviour
                 newPath.path = point;
                 currentPoint++;
             }
-            else if (transform.position == path.transform.GetChild(currentPoint).transform.position)
+            else 
             {
-                currentPoint++;
+                transform.position = Vector3.MoveTowards(transform.position, point.transform.position, speed);
+                // gameObject.transform.position = 0;
+                if (transform.position == path.transform.GetChild(currentPoint).transform.position)
+                {
+                    currentPoint++;
+                }
             }
+
         }
     }
 }
