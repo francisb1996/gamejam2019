@@ -10,11 +10,17 @@ public class PlayerController : MonoBehaviour
 
     public float objectScale;
 
+    public float speedBuffTime;
+    public float speedDebuffTime;
+    public bool isSpeedBuffed;
+    public bool isSpeedDebuffed;
+
     private Rigidbody2D rb2d;
     private SpriteRenderer spriteRenderer;
 
     void Start()
     {
+        isSpeedBuffed = false;
         this.transform.localScale = new Vector3(objectScale, objectScale, 1);
         rb2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -46,6 +52,28 @@ public class PlayerController : MonoBehaviour
         rb2d.AddForce(movement * speed);
     }
 
+    void Update()
+    {
+        if (isSpeedBuffed)
+        {
+            speedBuffTime -= Time.deltaTime;
+            if (speedBuffTime <= 0.0f)
+            {
+                speed = 5;
+                isSpeedBuffed = false;
+            }
+        }
+        else if (isSpeedDebuffed)
+        {
+            speedDebuffTime -= Time.deltaTime;
+            if (speedDebuffTime <= 0.0f)
+            {
+                speed = 5;
+                isSpeedDebuffed = false;
+            }
+        }
+    }
+
     //OnTriggerEnter2D is called whenever this object overlaps with a trigger collider.
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -53,6 +81,20 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("PickUp"))
         {
             other.gameObject.SetActive(false);
+        }
+        else if (other.gameObject.CompareTag("SpeedBuff"))
+        {
+            other.gameObject.SetActive(false);
+            isSpeedBuffed = true;
+            speedBuffTime = 3.0f;
+            speed = speed * 5;
+        }
+        else if (other.gameObject.CompareTag("SpeedDebuff"))
+        {
+            other.gameObject.SetActive(false);
+            isSpeedDebuffed = true;
+            speedDebuffTime = 3.0f;
+            speed = speed / 2;
         }
     }
 }
