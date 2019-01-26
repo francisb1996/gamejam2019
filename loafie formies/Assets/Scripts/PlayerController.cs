@@ -8,8 +8,6 @@ public class PlayerController : MonoBehaviour
 
     public int maxSpeed;
 
-    public int friction;
-
     public float objectScale;
 
     private Rigidbody2D rb2d;
@@ -20,7 +18,6 @@ public class PlayerController : MonoBehaviour
         this.transform.localScale = new Vector3(objectScale, objectScale, 1);
         rb2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        rb2d.drag = friction;
     }
 
     //FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
