@@ -41,3 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 608800681
+    locked: 0
+  - name: Player
+    uniqueID: 1669426461
+    locked: 0
+  - name: Cave Wall
+    uniqueID: 3208201811
+    locked: 0
+  - name: Water
+    uniqueID: 1313688937
+    locked: 0
+  - name: UI
+    uniqueID: 1821814309
+    locked: 0
