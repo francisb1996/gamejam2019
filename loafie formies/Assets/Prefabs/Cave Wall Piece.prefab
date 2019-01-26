@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 204910284028304557}
   - component: {fileID: 204910284028304558}
   - component: {fileID: 204910284028304556}
-  m_Layer: 0
-  m_Name: New Sprite
+  m_Layer: 9
+  m_Name: Cave Wall Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
