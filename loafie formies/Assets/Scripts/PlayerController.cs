@@ -17,6 +17,21 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb2d;
     private SpriteRenderer spriteRenderer;
+    private ParticleSystem swimEffect;
+    private ParticleSystemForceField swimForce;
+
+    public ParticleSystemForceFieldShape m_Shape = ParticleSystemForceFieldShape.Sphere;
+    public float m_StartRange = 5.0f;
+    public float m_EndRange = 20.0f;
+    public Vector3 m_Direction = Vector3.zero;
+    public float m_Gravity = 0.0f;
+    public float m_GravityFocus = 1.0f;
+    public float m_RotationSpeed = 0.0f;
+    public float m_RotationAttraction = 0.0f;
+    public Vector2 m_RotationRandomness = Vector2.zero;
+    public float m_Drag = 0.0f;
+    public bool m_MultiplyDragByParticleSize = true;
+    public bool m_MultiplyDragByParticleVelocity = true;
 
     void Start()
     {
@@ -24,6 +39,8 @@ public class PlayerController : MonoBehaviour
         this.transform.localScale = new Vector3(objectScale, objectScale, 1);
         rb2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        swimForce = GetComponent<ParticleSystemForceField>();
+        swimEffect = GetComponent<ParticleSystem>();
     }
 
     //FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
@@ -35,10 +52,18 @@ public class PlayerController : MonoBehaviour
         if(moveHorizontal > 0)
         {
             this.transform.localScale = new Vector3(-objectScale, objectScale, 1);
+
+            m_Gravity = 0.7f;
+
+            ChangeSwimForceFieldGravity();
         }
         else if(moveHorizontal < 0)
         {
             this.transform.localScale = new Vector3(objectScale, objectScale, 1);
+
+            m_Gravity = 0.7f;
+
+            ChangeSwimForceFieldGravity();
         }
 
         //Store the current vertical input in the float moveVertical.
@@ -72,6 +97,18 @@ public class PlayerController : MonoBehaviour
                 isSpeedDebuffed = false;
             }
         }
+
+        if (!Input.anyKey)
+        {
+            m_Gravity = 0f;
+            ChangeSwimForceFieldGravity();
+        }
+    }
+
+    private void ChangeSwimForceFieldGravity()
+    {
+        swimForce = GetComponent<ParticleSystemForceField>();
+        swimForce.gravity = m_Gravity;
     }
 
     //OnTriggerEnter2D is called whenever this object overlaps with a trigger collider.
