@@ -13,8 +13,11 @@ public class Friend : MonoBehaviour
 
     private bool attached = false;
 
+    private GameObject player;
+
     private void Start()
     {
+        player = GameObject.Find("Loafie");
         parent = transform.parent;
         facing = parent.localScale.x;
     }
@@ -23,6 +26,7 @@ public class Friend : MonoBehaviour
     {
         if (!attached)
         {
+            this.player.GetComponent<NumberOfFriends>().numberOfFriends++;
             target = other.transform;
             other.transform.GetComponent<AudioSource>().Play();
             attached = true;
