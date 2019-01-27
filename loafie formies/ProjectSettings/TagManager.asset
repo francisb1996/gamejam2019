@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SpeedBuff
   - SpeedDebuff
+  - Health
   layers:
   - Default
   - TransparentFX
@@ -48,6 +49,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1669426461
+    locked: 0
+  - name: Pick Up
+    uniqueID: 3623625627
     locked: 0
   - name: Cave Wall
     uniqueID: 3208201811

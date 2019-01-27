@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         isSpeedBuffed = false;
-
+        isSpeedDebuffed = false;
         transform.localScale = new Vector3(objectScale, objectScale, 1);
         rb2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -216,10 +216,10 @@ public class PlayerController : MonoBehaviour
         else if (other.gameObject.CompareTag("Health"))
         {
             other.gameObject.SetActive(false);
-            anglerLight.range += 2;
-            anglerLight.intensity += 1;
+            anglerLight.range -= 2;
+            anglerLight.intensity -= 1;
             SpriteRenderer playerSprite = player.GetComponent<SpriteRenderer>();
-            //playerSprite.color = new Color(playerSprite.color.r / 1.33f, playerSprite.color.g / 1.33f, playerSprite.color.b / 1.33f);
+            playerSprite.color = new Color(playerSprite.color.r / 1.33f, playerSprite.color.g / 1.33f, playerSprite.color.b / 1.33f);
         }
     }
 }
