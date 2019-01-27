@@ -10,13 +10,22 @@ public class LevelChanger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetMouseButtonDown(0))
+        {
+            MoveToNextLevel();
+        }
+    }
+
+    public void MoveToNextLevel() {
+        FadeToLevel(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void FadeToLevel(int levelIndex) {
         levelToLoad = levelIndex;
         animator.SetTrigger("FadeOut");
     }
+
+    
 
     public void OnFadeComplete() {
         SceneManager.LoadScene(levelToLoad);

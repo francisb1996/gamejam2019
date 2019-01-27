@@ -8,22 +8,22 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Opening.unity
+    guid: f9f9519286cc94dfe8de62d3c6c013cb
+  - enabled: 1
+    path: Assets/Scenes/Logo.unity
+    guid: f49af935bdf024811a0cc90039462fd0
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: d8774f5e2bfdf4a69a9008a536b4c879
   - enabled: 0
     path: Assets/Scenes/Devon.unity
     guid: a442eb2e23569ee41a7e340dcf17da75
   - enabled: 0
     path: Assets/Scenes/frands only.unity
     guid: 6069bc64a92e94c6aa1cfddbede7a99e
-  - enabled: 1
-    path: Assets/Scenes/Logo.unity
-    guid: f49af935bdf024811a0cc90039462fd0
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 6fd94ff21ba32477d9e8aff1b18fa1f5
-  - enabled: 1
-    path: Assets/Scenes/Main.unity
-    guid: d8774f5e2bfdf4a69a9008a536b4c879
-  - enabled: 1
-    path: Assets/Scenes/Opening.unity
-    guid: f9f9519286cc94dfe8de62d3c6c013cb
   m_configObjects: {}
