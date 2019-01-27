@@ -33,14 +33,22 @@ public class PlayerController : MonoBehaviour
     public bool m_MultiplyDragByParticleSize = true;
     public bool m_MultiplyDragByParticleVelocity = true;
 
+    public GameObject player;
+    public GameObject anglerLightObj;
+    public Light anglerLight;
+
     void Start()
     {
         isSpeedBuffed = false;
+        
         this.transform.localScale = new Vector3(objectScale, objectScale, 1);
         rb2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         swimForce = GetComponent<ParticleSystemForceField>();
         swimEffect = GetComponent<ParticleSystem>();
+        player = GameObject.Find("Player");
+        anglerLightObj = player.transform.Find("Angler Light").gameObject;
+        anglerLight = anglerLightObj.GetComponent<Light>();
     }
 
     //FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
@@ -75,6 +83,8 @@ public class PlayerController : MonoBehaviour
 
         //Call the AddForce function of our Rigidbody2D rb2d supplying movement multiplied by speed to move our player.
         rb2d.AddForce(movement * speed);
+
+
     }
 
     void Update()
@@ -115,11 +125,7 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         //Check the provided Collider2D parameter other to see if it is tagged "PickUp", if it is...
-        if (other.gameObject.CompareTag("PickUp"))
-        {
-            other.gameObject.SetActive(false);
-        }
-        else if (other.gameObject.CompareTag("SpeedBuff"))
+        if (other.gameObject.CompareTag("SpeedBuff"))
         {
             other.gameObject.SetActive(false);
             isSpeedBuffed = true;
