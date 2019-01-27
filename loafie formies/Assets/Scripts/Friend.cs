@@ -9,11 +9,12 @@ public class Friend : MonoBehaviour
     public int followDistance;
 
     private float facing;
+    private Transform parent;
 
     private void Start()
     {
-        facing = transform.parent.localScale.x;
-        
+        parent = transform.parent;
+        facing = parent.localScale.x;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -23,18 +24,18 @@ public class Friend : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (target && (Vector3.Distance(target.position, transform.position) > followDistance)) {
-            if (target.position.x > transform.position.x)
+        if (target && (Vector3.Distance(target.position, parent.position) > followDistance)) {
+            if (target.position.x > parent.position.x)
             {
-                transform.parent.localScale = new Vector3(-facing, Mathf.Abs(facing), 1);
+                parent.localScale = new Vector3(-facing, Mathf.Abs(facing), 1);
             }
-            else if (target.position.x < transform.position.x)
+            else if (target.position.x < parent.position.x)
             {
-                transform.parent.localScale = new Vector3(facing, Mathf.Abs(facing), 1);
+                parent.localScale = new Vector3(facing, Mathf.Abs(facing), 1);
             }
             Vector3 desiredPosition = target.position + offset;
-            Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
-            transform.parent.position = smoothedPosition;
+            Vector3 smoothedPosition = Vector3.Lerp(parent.position, desiredPosition, smoothSpeed * Time.deltaTime);
+            parent.position = smoothedPosition;
         }
     }
 }
