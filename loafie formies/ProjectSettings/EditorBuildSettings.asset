@@ -15,6 +15,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Logo.unity
     guid: f49af935bdf024811a0cc90039462fd0
   - enabled: 1
+    path: Assets/Scenes/Story 1.unity
+    guid: 997d67e221352427c8bcf48822f07b00
+  - enabled: 1
+    path: Assets/Scenes/Story 2.unity
+    guid: 988fe6bf5bf7c4498af647f26eac4965
+  - enabled: 1
+    path: Assets/Scenes/Story 3.unity
+    guid: 3f2ca8b2225ba4070b1922ceb9fb2f60
+  - enabled: 1
+    path: Assets/Scenes/Story 4.unity
+    guid: 0a416e13f695f43daa5a538a95a081c5
+  - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: d8774f5e2bfdf4a69a9008a536b4c879
   - enabled: 0
