@@ -612,7 +612,7 @@ GameObject:
   - component: {fileID: 2249998980103566652}
   - component: {fileID: 5548260530953820780}
   - component: {fileID: 7287618204665331511}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Loafie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5870,7 +5870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   maxSpeed: 0
-  objectScale: 0.25
+  objectScale: 0.7
   speedBuffTime: 0
   speedDebuffTime: 0
   isSpeedBuffed: 0
