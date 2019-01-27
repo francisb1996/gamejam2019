@@ -11,6 +11,8 @@ public class Friend : MonoBehaviour
     private float facing;
     private Transform parent;
 
+    private bool attached = false;
+
     private void Start()
     {
         parent = transform.parent;
@@ -19,7 +21,12 @@ public class Friend : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        target = other.transform;
+        if (!attached)
+        {
+            target = other.transform;
+            other.transform.GetComponent<AudioSource>().Play();
+            attached = true;
+        }
     }
 
     private void FixedUpdate()
