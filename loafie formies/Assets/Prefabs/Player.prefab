@@ -85,6 +85,7 @@ GameObject:
   - component: {fileID: 2080214375052551455}
   - component: {fileID: 2713474919865253320}
   - component: {fileID: 1351193507469152942}
+  - component: {fileID: 3564007607943139590}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -195,6 +196,21 @@ MonoBehaviour:
   speedDebuffTime: 0
   isSpeedBuffed: 0
   isSpeedDebuffed: 0
+  m_Shape: 0
+  m_StartRange: 5
+  m_EndRange: 20
+  m_Direction: {x: 0, y: 0, z: 0}
+  m_Gravity: 0
+  m_GravityFocus: 1
+  m_RotationSpeed: 0
+  m_RotationAttraction: 0
+  m_RotationRandomness: {x: 0, y: 0}
+  m_Drag: 0
+  m_MultiplyDragByParticleSize: 1
+  m_MultiplyDragByParticleVelocity: 1
+  player: {fileID: 0}
+  anglerLightObj: {fileID: 0}
+  anglerLight: {fileID: 0}
 --- !u!58 &1891866555545606622
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5372,3 +5388,18 @@ ParticleSystemForceField:
         m_RotationOrder: 4
     m_MultiplyDragByParticleSize: 0
     m_MultiplyDragByParticleVelocity: 0
+--- !u!111 &3564007607943139590
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7478757615163272860}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 60a4e0e5be13d462b8721f2aa076bcf6, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
