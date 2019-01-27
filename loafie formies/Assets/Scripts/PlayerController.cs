@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         swimForce = GetComponent<ParticleSystemForceField>();
         swimEffect = GetComponent<ParticleSystem>();
-        player = GameObject.Find("Player");
+        player = GameObject.Find("Loafie");
         anglerLightObj = player.transform.Find("Angler Light").gameObject;
         anglerLight = anglerLightObj.GetComponent<Light>();
     }
@@ -68,6 +68,7 @@ public class PlayerController : MonoBehaviour
         if (moveHorizontal > 0)
         {
             transform.localScale = new Vector3(-objectScale, objectScale, 1);
+            swimEffect.transform.localScale = new Vector3(-objectScale, objectScale, 1);
 
             m_Gravity = 0.7f;
 
@@ -76,6 +77,7 @@ public class PlayerController : MonoBehaviour
         else if(moveHorizontal < 0)
         {
             transform.localScale = new Vector3(objectScale, objectScale, 1);
+            swimEffect.transform.localScale = new Vector3(objectScale, objectScale, 1);
 
             m_Gravity = 0.7f;
 
