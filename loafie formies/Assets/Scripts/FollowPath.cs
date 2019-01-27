@@ -6,6 +6,7 @@ public class FollowPath : MonoBehaviour
 {
     public GameObject path;
     public float speed;
+    public bool loop;
     private int currentPoint;
 
     // Start is called before the first frame update
@@ -36,6 +37,8 @@ public class FollowPath : MonoBehaviour
                 }
             }
 
+        } else if (loop) {
+            currentPoint = 0;
         }
     }
 }
