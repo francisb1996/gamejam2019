@@ -593,7 +593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.9828018
+  m_Length: 0.98280156
   m_ChildTransform: {fileID: 4569544222766809764}
   m_AttachedIK: {fileID: 0}
 --- !u!1 &4569544223149946358
@@ -627,7 +627,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4569544223149946358}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.143717, y: 9.334498, z: -0.03515625}
+  m_LocalPosition: {x: 9.143717, y: 9.334498, z: -0.1}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 4569544223020116260}
