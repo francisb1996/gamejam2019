@@ -4776,6 +4776,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7488541520409094659}
+  - component: {fileID: 16333894142002514}
+  - component: {fileID: 2309190799096115076}
   m_Layer: 0
   m_Name: AcidCloud
   m_TagString: Untagged
@@ -4800,6 +4802,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &16333894142002514
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7488541520409094658}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 20
+--- !u!114 &2309190799096115076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7488541520409094658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4afb4f94743e847818f75984c37f9303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7488541521016253842
 GameObject:
   m_ObjectHideFlags: 0

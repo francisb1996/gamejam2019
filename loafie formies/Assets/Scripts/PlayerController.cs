@@ -220,8 +220,9 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
             anglerLight.range -= 2;
             anglerLight.intensity -= 1;
-            SpriteRenderer playerSprite = player.GetComponent<SpriteRenderer>();
-            playerSprite.color = new Color(playerSprite.color.r / 1.33f, playerSprite.color.g / 1.33f, playerSprite.color.b / 1.33f);
+            // SpriteRenderer playerSprite = player.GetComponent<SpriteRenderer>();
+            // playerSprite.color = new Color(playerSprite.color.r / 1.33f, playerSprite.color.g / 1.33f, playerSprite.color.b / 1.33f);
+            gameObject.GetComponent<Health>().health++;
         }
     }
 }
