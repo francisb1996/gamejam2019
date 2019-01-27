@@ -139,5 +139,13 @@ public class PlayerController : MonoBehaviour
             speedDebuffTime = 3.0f;
             speed = speed / 2;
         }
+        else if (other.gameObject.CompareTag("Health"))
+        {
+            other.gameObject.SetActive(false);
+            anglerLight.range += 2;
+            anglerLight.intensity += 1;
+            SpriteRenderer playerSprite = player.GetComponent<SpriteRenderer>();
+            //playerSprite.color = new Color(playerSprite.color.r / 1.33f, playerSprite.color.g / 1.33f, playerSprite.color.b / 1.33f);
+        }
     }
 }
